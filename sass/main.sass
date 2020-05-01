@@ -50,6 +50,8 @@
 			top: -4px
 .slider
 	background-color: #000000
+	.slick-active
+		opacity: 0.85 !important
 	&__item
 		height: calc(100vh - 90px)
 		background-repeat: no-repeat
@@ -66,7 +68,6 @@
 		text-align: center
 		max-width: 75%
 		margin: 0 auto
-		
 	&__title h1
 		background-color: #000000
 		color: #ffffff
@@ -97,10 +98,12 @@
 		border-radius: 50%
 		border: none
 		cursor: pointer
+		outline: none
 		&.slick-prev
 			left: 2%
 			background-color: transparent
 			border: 1px solid #ffffff
+			z-index: 1
 			&::before, &::after
 				content: ""
 				width: 15px
@@ -113,9 +116,14 @@
 				transform: rotate(-45deg)
 			&::after
 				transform: rotate(45deg)
+			&:hover
+				background-color: #000
+				border: none
+				transition: all 0.3s
 		&.slick-next
 			right: 2%
-			background-color: #000000
+			background-color: transparent
+			border: 1px solid #ffffff
 			&::before, &::after
 				content: ""
 				width: 15px
@@ -128,6 +136,10 @@
 				transform: rotate(-45deg)
 			&::after
 				transform: rotate(45deg)
+			&:hover
+				background-color: #000
+				border: none
+				transition: all 0.3s
 	.slick-dots
 		list-style-type: none
 		display: flex

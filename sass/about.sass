@@ -105,59 +105,56 @@ $line4text: "85%"
 	width: 100%
 	z-index: 3
 	@media (max-width: 768px)
-		margin-top: 10vh
-	.img-container
+		margin-top: 70px	
+	.heading-content
+		display: inline-flex
+		flex-direction: column
+		align-items: left
+		justify-content: center
 		height: 100%
-		background-repeat: no-repeat
-		background-position: right
-		background-image: url(../img/aboutbg.png)
-		@media (max-width: 1000px)
-			background-position: 150% 0
-		@media (max-width: 950px)
-			background-position: 250% 0
-		@media (max-width: 880px)
-			background-position: 100px 0
-		@media (max-width: 700px)
-			background-image: none
-			
-			
-		.heading-content
-			display: inline-flex
-			flex-direction: column
-			align-items: left
-			justify-content: center
-			height: 100%
-			@media (max-width: 550px)
-				display: flex
-				align-items: center
-			h1
-				color: #ffffff
-				font-family: Roboto
-				font-size: 48px
-				font-weight: 300
-				text-transform: uppercase
-				text-align: center
-				margin 0 0 40px 0
-				background-color: #000000
-				padding: 0 36px
-				@media (max-width: 915px)
-					font-size: 40px
-				@media (max-width: 768px)
-					font-size: 36px
-				@media (max-width: 540px)
-					padding: 0 5px
-			h2
-				color: #000000
-				font-family: Roboto
-				font-size: 18px
-				font-weight: 300
-				line-height: 24px
-				text-transform: uppercase
-				letter-spacing: 7.2px
-				margin: 0
-				@media (max-width: 768px)
-					font-size: 16px
-					padding-left: 15px
+		@media (max-width: 550px)
+			display: flex
+			align-items: center
+		h1
+			color: #ffffff
+			font-family: Roboto
+			font-size: 48px
+			font-weight: 300
+			text-transform: uppercase
+			text-align: center
+			margin 0 0 40px 0
+			background-color: #000000
+			padding: 0 36px
+			z-index: 1
+			@media (max-width: 915px)
+				font-size: 40px
+			@media (max-width: 768px)
+				font-size: 36px
+			@media (max-width: 540px)
+				padding: 0 5px
+		h2
+			color: #000000
+			font-family: Roboto
+			font-size: 18px
+			font-weight: 300
+			line-height: 24px
+			text-transform: uppercase
+			letter-spacing: 7.2px
+			margin: 0
+			z-index: 1
+			@media (max-width: 768px)
+				font-size: 16px
+				padding-left: 15px
+		&__img
+			position: absolute
+			right: 0
+			flex: 0 0 100%
+			@media (min-width: 1200px)
+				left: 40%
+			@media (max-width: 1000px)
+				right: 0
+			@media (max-width: 900px)
+				opacity: 0.6
 
 .about-block
 	display: flex
@@ -473,7 +470,7 @@ $line4text: "85%"
 	.blur-container.active
 		filter: blur(5px)
 	.header-nav
-		height: 10vh
+		height: 70px
 		position: fixed
 		top: 0
 		background: #ffffff
@@ -483,7 +480,7 @@ $line4text: "85%"
 		&__menu
 			position: fixed
 			left: -100%
-			top: 10vh
+			top: 70px
 			width: 100%
 			height: 100%
 			background-color: rgba(0,0,0, 0.7)
