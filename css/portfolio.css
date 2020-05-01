@@ -289,7 +289,8 @@
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
-                flex-direction: column; } }
+                flex-direction: column;
+                margin-top: 50px;} }
   .portfolio-slider__content {
     padding-right: 15px;
     -webkit-box-flex: 0;
