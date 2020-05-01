@@ -2,7 +2,7 @@ $(function(){
 	$('.slider').slick({
 		arrows: true,
 		fade: true,
-		dots: true,
+		dots: false,
 	});
 	$('.header-nav__burger').click(function(event) {
 		$('.header-nav__burger,.header-nav,.blur-container').toggleClass('active');
@@ -15,12 +15,58 @@ $(function(){
         }
     });
 	$('.content-nav__burger').click(function(){
-		$('.content-nav__burger,.content-nav').toggleClass('active')
+		$('.content-nav__burger,.content-nav').toggleClass('active');
 	});
 	$(document).mouseup(function (e){ // событие клика по странице
         if (!$(".content-nav__items,.content-nav__burger").is(e.target) &&
         	$(".content-nav__items,.content-nav__burger").has(e.target).length === 0) { // если клик сделан не по вложенным элементам
             $(".content-nav,.content-nav__burger").removeClass("active");
         }
-    });
+   });
+	$('.portfolio-slider').slick({
+			arrows: true,
+			fade: true,
+			dots: false,
+	});
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		draggable: false,
+		swipe: false,
+		waitForAnimate: false,
+		asNavFor: '.slider-nav'
+	});
+	$('.slider-nav').slick({
+	  slidesToShow: 5,
+	  slidesToScroll: 1,
+	  asNavFor: '.slider-for',
+	  focusOnSelect: true,
+	});
+	$('.button-share').click(function() {
+		$('.share-media,.button-share').toggleClass('active');
+	});
+	$(document).mouseup(function (e) {
+		if (!$('.button-share,.share-media').is(e.target) &&
+				$('.button-share,.share-media').has(e.target).length === 0){
+					$('.button-share,.share-media').removeClass('active');
+		}
+	});
+	$('.slider-nav__item _1').click(function(){
+		$('.slider-nav__item _1').addClass('_active')
+		$('.slider-nav__item _2,.slider-nav__item _3,.slider-nav__item _4').removeClass('_active')
+	})
+	$('.slider-nav__item _2').click(function(){
+		$('.slider-nav__item _2').addClass('_active')
+		$('.slider-nav__item _1,.slider-nav__item _3,.slider-nav__item _4').removeClass('_active')
+	})
+	$('.slider-nav__item _3').click(function(){
+		$('.slider-nav__item _3').addClass('_active')
+		$('.slider-nav__item _2,.slider-nav__item _1,.slider-nav__item _4').removeClass('_active')
+	})
+	$('.slider-nav__item _4').click(function(){
+		$('.slider-nav__item _4').addClass('_active')
+		$('.slider-nav__item _2,.slider-nav__item _3,.slider-nav__item _1').removeClass('_active')
+	})
 });
