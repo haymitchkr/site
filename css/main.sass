@@ -1,0 +1,420 @@
+@import "libs"
+@import "fonts"
+
+*
+	box-sizing: border-box
+
+.container
+	max-width: 1120px
+	margin: 0 auto
+	padding: 0 15px
+.header
+	box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.15)
+	z-index: 3
+	position: relative
+.header-nav
+	max-width: 1120px
+	margin: 0 auto
+	padding: 0 15px
+	height: 90px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	position: relative
+	&__items
+		list-style-type: none
+		display: flex
+	&__link
+		margin-left: 40px
+		position: relative
+		& a:hover
+				color: #000
+	&__link a
+		color: #777777
+		font-family: Roboto
+		font-size: 14px
+		font-weight: 700
+		line-height: 24px
+		text-transform: uppercase
+		text-decoration: none
+
+	&__link--active 
+		a
+			color: #000000
+		&::before
+			content: "\f2d1"
+			font-family: 'Font Awesome 5 Free'
+			color: #000
+			position: absolute
+			left: -30px
+			top: -4px
+.slider
+	background-color: #000000
+	.slick-active
+		opacity: 0.85 !important
+	&__item
+		height: calc(100vh - 90px)
+		background-repeat: no-repeat
+		-webkit-background-size: cover
+		background-size: cover
+		background-position: center
+	&__content
+		z-index: 1
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		height: 100%
+		text-align: center
+		max-width: 75%
+		margin: 0 auto
+	&__title h1
+		background-color: #000000
+		color: #ffffff
+		font-family: Roboto
+		font-size: 48px
+		font-weight: 300
+		text-transform: uppercase
+		letter-spacing: 4.8px
+		margin: 10px 0
+		padding: 0 30px
+
+	&__subtitle h2
+		height: 13px
+		color: #000000
+		font-family: Roboto
+		font-size: 18px
+		font-weight: 300
+		line-height: 24px
+		text-transform: uppercase
+		letter-spacing: 7.2px
+	.slick-arrow
+		position: absolute
+		top: 50%
+		z-index: 0
+		font-size: 0
+		height: 40px
+		width: 40px
+		border-radius: 50%
+		border: none
+		cursor: pointer
+		outline: none
+		&.slick-prev
+			left: 2%
+			background-color: transparent
+			border: 1px solid #ffffff
+			z-index: 1
+			&::before, &::after
+				content: ""
+				width: 15px
+				height: 1px
+				background-color: #ffffff
+				position: absolute
+				transform-origin: left
+				left: 30%
+			&::before
+				transform: rotate(-45deg)
+			&::after
+				transform: rotate(45deg)
+			&:hover
+				background-color: #000
+				border: none
+				transition: all 0.3s
+		&.slick-next
+			right: 2%
+			background-color: transparent
+			border: 1px solid #ffffff
+			&::before, &::after
+				content: ""
+				width: 15px
+				height: 1px
+				background-color: #ffffff
+				position: absolute
+				transform-origin: right
+				right: 30%
+			&::before
+				transform: rotate(-45deg)
+			&::after
+				transform: rotate(45deg)
+			&:hover
+				background-color: #000
+				border: none
+				transition: all 0.3s
+	.slick-dots
+		list-style-type: none
+		display: flex
+		position: absolute
+		bottom: 5%
+		left: 50%
+		margin: 0 0 0 -45px
+		padding: 0
+		button
+			width: 15px
+			height: 15px
+			border-radius: 50%
+			background-color: #ffffff
+			border: none
+			font-size: 0
+			cursor: pointer
+			outline: none
+			margin-right: 15px
+		& .slick-active button
+			box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 1)
+.content-nav
+	border-top: 1px solid rgba(119,119,119, 0.5)
+	border-bottom: 1px solid rgba(119,119,119, 0.5)
+	margin: 35px 0
+	display: flex
+	justify-content: center
+	&__burger
+		display: none
+	&__items
+		font-family: Roboto
+		font-size: 14px
+		font-weight: 700
+		line-height: 24px
+		text-transform: uppercase
+		display: flex
+		justify-content: space-around
+		list-style-type: none
+		padding: 0
+		flex-wrap: wrap
+	&__link
+		position: relative
+	&__link::after
+		content: ""
+		width: 25px
+		height: 1px
+		position: absolute
+		top: 45%
+		margin-left: -10px
+		background-color: #777777
+		transform: rotate(-65deg)
+		opacity: 0.5
+	&__link:last-child::after
+		width: 0
+		height: 0
+	&__link a
+		text-decoration: none
+		color: #777777
+		padding: 0 20px
+		&:hover
+			color: #000000
+	&__link--active a
+		color: #000000
+.content-gallery
+	display: flex
+	margin-top: -30px
+	line-height: 0
+	&__column
+		display: flex
+		flex-direction: column
+		list-style-type: none
+		padding: 0
+	&__column-1 .content-gallery__item
+		margin: 15px 15px 15px 0
+	&__column-2 .content-gallery__item
+		margin: 15px
+	&__column-3 .content-gallery__item
+		margin: 15px 0 15px 15px
+	&__item
+		position: relative
+		img
+			height: auto
+			max-width: 100%
+	&__item:hover 
+		background-color: #000
+		transition: all 0.5s
+		&::before
+			content: ""
+			width: 40px
+			height: 2px
+			background-color: #ffffff
+			position: absolute
+			left: 50%
+			margin-left: -20px
+			top: 50%
+			z-index: 1
+		&::after
+			content: ""
+			width: 40px
+			height: 2px
+			background-color: #ffffff
+			position: absolute
+			left: 50%
+			margin-left: -20px
+			top: 50%
+			transform: rotate(90deg)
+		img
+			opacity: 0.5
+.footer
+	box-shadow: 0 -3px 5px 1px rgba(163, 163, 163, 0.1)
+	text-align: center
+	margin-top: 70px
+	padding: 60px 0 15px 0
+	.social-media
+		display: flex
+		list-style-type: none
+		border-top: 1px solid rgba(119,119,119, 0.5)
+		border-bottom: 1px solid rgba(119,119,119, 0.5)
+		margin-top: 40px
+		padding: 25px 0
+		justify-content: center
+		&__item
+			margin: 0 2%
+			a
+				color: #777777
+				font-size: 14px
+				font-weight: 400
+				line-height: 24px
+			a:hover
+				color: #000000
+	.footer-copyright
+		color: #9c9c9c
+		font-family: Roboto
+		font-size: 13px
+		font-weight: 400
+		line-height: 26px
+		text-transform: uppercase
+		span
+			color: #000000
+
+.header-nav__burger
+	position: relative
+	display: none
+	width: 30px
+	height: 20px
+	span
+		height: 2px
+		width: 100%
+		background: #000000
+		position: absolute
+		top: 9px
+		transition: all 0.3s ease 0s
+	&::before, &::after
+		content: ""
+		height: 2px
+		width: 100%
+		background-color: #000000
+		position: absolute
+		transition: all 0.3s ease 0s
+	&::before
+		top: 0
+	&::after
+		bottom: 0
+.header-nav__burger.active::before
+	transform: rotate(45deg)
+	top: 10px
+.header-nav__burger.active::after
+	transform: rotate(-45deg)
+	top: 10px
+.header-nav__burger.active span
+	transform: scale(0)
+
+
+@media (max-width: 1000px)
+	.slider
+		&__title h1
+			font-size: 40px
+			padding: 0 10px
+		&__subtitle h2
+			font-size: 15px
+
+
+
+@media (max-width: 768px)
+	body.lock
+		overflow: hidden
+	.blur-container.active
+		filter: blur(5px)
+	.header-nav
+		height: 10vh
+		position: fixed
+		top: 0
+		background: #ffffff
+		width: 100%
+		z-index: 1
+		box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.15)
+		&__menu
+			position: fixed
+			left: -100%
+			top: 10vh
+			width: 100%
+			height: 100%
+			background-color: rgba(0,0,0, 0.7)
+			transition: all 0.5s
+		&__items
+			display: block
+		&__link
+			a
+				padding: 5px
+				color: #fff
+				&:hover
+					color: #6891d4
+		&__link--active
+			a
+				color: #6891d4
+			&::before
+				content: ""
+		&__link
+			margin: 0 0 20px 0
+			a
+				font-size: 20px
+				letter-spacing: 1px
+		&__burger
+			display: block
+	.header-nav.active .header-nav__menu
+		left: 0
+	.slider-top
+		margin-top: 10vh
+	.slider .slick-arrow
+		top: -100%
+	.slider__content
+			max-width: 60%
+	.content-nav
+		position: relative
+		border: none
+		&__items
+			display: block
+			position: absolute
+			left: 5%
+			top: -25px
+			opacity: 0
+			z-index: 2
+			visibility: hidden
+			transition: all 0.3s
+		&__link
+			&::after
+				display: none
+		&.active
+			.content-nav__items
+				top: 0px
+				opacity: 1
+				visibility: visible
+				background-color: #fff
+				padding: 5px
+				box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15)
+		&__burger
+			display: block
+			position: absolute
+			left: 5%
+			margin-top: -20px 
+			font-size: 24px
+			cursor: pointer
+			line-height: 1
+			&.active
+				transform: rotate(180deg)
+	.content-gallery
+		flex-direction: column
+		align-items: center
+		&__column
+			margin: 0
+		&__column-1, &__column-3
+			.content-gallery__item
+				margin: 15px
+	.footer
+		padding-top: 30px
+		margin-top: 45px
+	 .footer-copyright
+			font-size: 9px
+			line-height: 10px
