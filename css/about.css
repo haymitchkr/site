@@ -37,6 +37,7 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
+body { overflow-x: hidden; }
 
 .container {
   max-width: 1120px;
